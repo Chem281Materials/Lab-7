@@ -67,6 +67,22 @@ cd build
 make
 ./mol_exe
 ```
+
+Running ./mol_exe
+```
+root@dfa54b69bdf3:/repo/build# ./mol_exe
+80
+28
+H
+0.8257
+2.0227
+-1.1458
+Small molecules: 36
+Single bonds: 34
+Filtered mols: 13
+HBond donors: 19
+HBond acceptors: 56
+```
 ### 3. **Complete the Rust functions**
 Complete `count_hbond_acceptors` and `count_hbond_donors` in `molecule.rs`. They are identical to the C++ functions just written in Rust! Once completed, filter the molecules but instead of using an explicit `filter_molecules` function, chain iterators together to to achieve the same functionality.
 
@@ -76,5 +92,11 @@ cd molecule
 cargo run
 ```
 
+```
+Loaded 80 molecule(s)
+36 small molecule(s)
+19 hbd molecule(s)
+56 hba molecule(s)
+```
 ### Extra time
 Spend some time looking at the differences and similarities between the C++ code and the Rust code. You can also look at the `smi_to_mol.py` script which was used to generate 3D structures from SMILES.
