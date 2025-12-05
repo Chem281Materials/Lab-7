@@ -44,12 +44,12 @@ obabel -imol files/mols/*.mol -O files/mols.mol2
 
 ### 2. **Complete the C++ functions**
 `filter_molecules`
-You should apply 2 filters to the list of molecules to trim their size down from 80.
+You should apply the following filters to the list of molecules to trim their size down from 80. Use the templated function `filter()` found in molecule.h to help you.
     1. Only molecules with atoms <= 25 are allowed.
     2. Only molecules with ALL single bonds are allowed.
     3. Only molecules with more than 1 HBA and 1 HBD are allowed.
 
-These filters are excluding molecules that are too large (lets pretend our active site is really small!), and contains molecules that have a lot of degrees of freedom.
+These filters are excluding molecules that are too large (lets pretend our active site is really small!), and contains molecules that have a lot of degrees of freedom. For 3) you will need to complete the following functions:
 
 `countHBondDonors`
 A HBond donor for our purposes is an Oxygen or Nitrogen atom with a full valency with atleast 1 hydrogen attached. The way we would look for them is by checking if the total bond order of an Oxygen is 2 and it has 1 hydrogen as a neighbor. For Nitrogens the total bond order would be 3 and it has 1 hydrogen as a neighbor.
